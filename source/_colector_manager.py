@@ -75,7 +75,7 @@ def colect_single_processor(l_p, exp_info,testing=False):
 
 def get_ECCD_scores(cl_sensor,l_sensor,end_dir,l_cat,n_rows=None):
     storage_path = '/storage_1/aDetection'
-    p_adjust = 'experiments/aDetection_s{}_{}/aDetection.json'.format(cl_sensor,end_dir)
+    p_adjust = 'experiments/aDetection_s{}_{}/aDetection.yaml'.format(cl_sensor,end_dir)
     p = loadParameters(p_adjust)
 
     l_exp  = [1,2,3,4,5]

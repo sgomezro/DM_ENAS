@@ -7,7 +7,7 @@ from datetime import datetime
 
 def initialize(args):
     
-    p_path = 'experiments/shms/shms_p.json'
+    p_path = 'experiments/shms/shms_p.yaml'
     p = load_parameters(p_path)
     p['n_workers']= args.n_processors
     p['n_slaves'] = args.n_processors-1

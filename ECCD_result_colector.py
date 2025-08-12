@@ -11,7 +11,7 @@ def initialize(args):
     diff_type = 'diff'
     arch_type = 'pre_adjw'
     
-    p_path = 'experiments/shms/shms_p.json'
+    p_path = 'experiments/shms/shms_p.yaml'
     p = loadParameters(p_path)
 
     save_filename = 'ECCD_ch{}_'.format(channel)

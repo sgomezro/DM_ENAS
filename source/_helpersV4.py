@@ -1,13 +1,13 @@
 import numpy as np
 from numpy.random import SeedSequence, default_rng
-import json
+import yaml
 import shutil
 import torch
 import os
 import time
     
 def load_parameters(p_filename,verbose=False):
-    """Loads hyperparameters from .json file
+    """Loads hyperparameters from .yaml file
     Args:
       p_filename - (string) - file name of hyperparameter file
       verbose  - (bool)   - print contents of hyperparameter file to terminal
@@ -15,9 +15,9 @@ def load_parameters(p_filename,verbose=False):
     Note: see p/hypkey.txt for detailed hyperparameter description
     """    
     #Selectig the base line parameters
-    p_default = "p/caeV4.json"
-    with open(p_default) as data_file: p = json.load(data_file)
-    with open(p_filename) as data_file: update = json.load(data_file)
+    p_default = "p/caeV4.yaml"
+    with open(p_default) as data_file: p = yaml.safe_load(data_file)
+    with open(p_filename) as data_file: update = yaml.safe_load(data_file)
     p.update(update)
     
     if verbose:

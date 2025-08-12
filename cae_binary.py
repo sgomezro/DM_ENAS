@@ -9,11 +9,11 @@ from datetime import datetime
 
 
 def init_p(args):
-    p_path = 'experiments/msl_100/msl_p.json'
-    # p_path = 'experiments/yahoo_100/yahoo_p.json'
-    # p_path = 'experiments/smap_tests/smap_p.json'
-    # p_path = 'experiments/shms_tests/shms_p.json'
-    # p_path = 'experiments/shms/shms_p.json'
+    p_path = 'experiments/msl_100/msl_p.yaml'
+# p_path = 'experiments/yahoo_100/yahoo_p.yaml'
+# p_path = 'experiments/smap_tests/smap_p.yaml'
+# p_path = 'experiments/shms_tests/shms_p.yaml'
+# p_path = 'experiments/shms/shms_p.yaml'
     
     p = load_parameters(p_path)
 
