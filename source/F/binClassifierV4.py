@@ -26,14 +26,14 @@ class bin_class():
         if self.loss_f == 'mae':
             # mean_absolute_error = MeanAbsoluteError()
             def fun_error(target,preds):
-                return mean_absolute_error(preds,target).to(self.device)
+                return mean_absolute_error(preds.contiguous(),target.contiguous()).to(self.device)
 
         elif self.loss_f == 'mse':
             # mean_square_error = MeanSquaredError(num_outputs=self.num_classes).to(self.device)
             def fun_error(target,preds):
                 # print(f'target {target.size()}-{target.dtype}, predictions {preds.size()}-{preds.dtype}')
                 # print(f'target {target[1,:]}, preds {preds[1,:]}')
-                return mean_squared_error(preds,target).to(self.device)
+                return mean_squared_error(preds.contiguous(),target.contiguous()).to(self.device)
  
         elif self.loss_f == 'bin_ce':
             def fun_error(target,preds):

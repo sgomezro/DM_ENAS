@@ -9,13 +9,13 @@ from datetime import datetime
 
 
 def init_p(args):
-    # p_path = 'experiments/smap_tests/smap_p.yaml'
-# p_path = 'experiments/shms_tests/shms_p.yaml'
-p_path = 'experiments/shms/shms_p.yaml'
+    # p_path = '/mnt/storage_1/sgomez/experiments/smap_tests/smap_p.yaml'
+    # p_path = 'experiments/shms_tests/shms_p.yaml'
+    p_path = '/mnt/storage_1/sgomez/experiments/shms/shms_p.yaml'
     
     p = load_parameters(p_path)
 
-    # p['maxGen'] = 10
+    p['maxGen'] = 2
     p['n_workers']= args.n_processors
     p['n_slaves'] = args.n_processors-1
     p['gpus']     = []
@@ -38,10 +38,10 @@ p_path = 'experiments/shms/shms_p.yaml'
     return p,stdout
 
 def generate_p_list(args):
-    l_exp    = [1,2,3]
-    l_channels  = ['s35']#['A-5']
-    l_diff_type = ['non-diff']#['diff','non-diff']
-    l_inputs  = [10,20,30,50]#[10,20,30,50]#[10,20,30,50,100]
+    l_exp    = [1] #[1,2,3]
+    l_channels  =['s35']#  ['A-5']#
+    l_diff_type = ['diff']# ['non-diff']#['diff','non-diff']
+    l_inputs  = [10]#[10,20,30,50]#[10,20,30,50]#[10,20,30,50,100]
 
         
     p,stdout = init_p(args)
