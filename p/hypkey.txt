@@ -1,0 +1,42 @@
+# WANN Hyperparameters
+
+task              - (string) - name of task (see domain/config.py)
+maxGen            - (int)    - number of generations to run algorithm
+popSize           - (int)    - number of individuals in population
+fitThresh         - (int)    - fitness threshold as stop criterion   
+
+alg_wDist		  - (string) - "standard": 6 chosen values ([-2,-1,-0.5,0.5,1,2])
+                               "other": linspace of alg_nVals between weight caps
+alg_nVals         - (int)    - number of weights to test when evaluating individual
+alg_nReps         - (int)    - number of repetitions when evaluating individuals
+alg_probMoo       - (float)  - chance of applying second objective when using MOO
+
+prob_addConn      - (float)  - chance to add connections
+prob_addNode      - (float)  - chance to add node
+prob_crossover    - (float)  - chance of crossover
+prob_enable       - (float)  - chance to enable disabled connection
+prob_mutAct       - (float)  - chance to change node activation function
+prob_initEnable   - (float)  - chance to enable each initial connection
+
+select_cullRatio  - (float)  - percent of individuals to remove from parent pool before selection
+select_eliteRatio - (float)  - percent of individuals to pass on to next genration unchanged
+select_tournSize  - (int)    - number of competitors in each tournament
+
+save_mod          - (int)    - generations between saving results to disk
+bestReps          - (int)    - number of times to test new 'best' solutions to confirm
+
+//CMA-ES configuration
+cma_initSigma     - (float)  - Sigma initialization used for CMA-ES configuration
+cma_maxGen        - (int)    - cma max generations
+cma_popSize       - (int)    - cma population size
+cma_input_arch    - (string) - cma input architecture file location
+cma_output_path   - (string) - cma output path where is desired to save cma outpus
+cma_out_prefix    - (string) - cma output prefix
+cma_one_house     - (int)    - cma individual house to be adjusted if list of houses is empty 
+cma_list_houses   - (list)   - cma list of houses to be adjusted
+
+//configuration of the neural network
+nn_input_size     - (int)    - Input size of the neural network
+nn_output_size    - (int)    - Output layer size of the neural network
+nn_initAct        - (int)    - Initial activation function for populations
+nn_h_act          - (list)   - 1: sum, 2: Step, 3: sine, 4: gausian, 5: tanh, 6: sigmoid, 7: inverse? -?, 8: abs, 9: relu, 10: cos  
